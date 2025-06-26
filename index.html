@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUSICAL SCHEDULE</title>
+    <link rel="stylesheet" href="global.css" />
+    <meta property="og:title" content="MUSICAL SCHEDULE" />
+    <meta property="og:description" content="MUSICAL SCHEDULE" />
+  </head>
+
+  <body id="top">
+
+        <header>
+            <section>
+              <span>공연선택</span>
+              <select id="musicalSelect">
+                <option value="2025_aladin_busan.csv">알라딘 부산</option>
+                <option value="2024_aladin.csv">알라딘</option>
+              </select>
+            </section>
+            <section>
+              <h1 id="musicalTitle">알라딘</h1>
+              <img id="musicalLogo" src="..." class="logo" />
+              <h5 id="musicalInfo">
+                🚩장소 : 샤롯데씨어터<br />
+                📅공연기간 : 2024.11.22 ~ 2025.06.22
+              </h5>
+            </section>
+        </header>
+
+        <main>
+            <div class="filter">
+                <div class="filter-group">
+                    <button class="btn save-btn" id="saveButton">관극 일정 저장</button>
+                </div>
+                <div class="filter-group">
+                    <button class="btn filter-btn" id="filterButton">내 관극 일정 보기</button>
+                </div>
+
+                <div class="vertical-divider"></div>
+            </div>
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <button class="btn filter-button" onclick="toggleFilter('date')">공연 기간</button>
+                    <div class="filter-panel" id="filter-date">
+                    <input type="date" id="startDate" />
+                    <span>~</span>
+                    <input type="date" id="endDate" />
+                    <button onclick="applyDateFilter()">적용</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="btn filter-button" onclick="toggleFilter('day')">요일</button>
+                    <div class="filter-panel" id="filter-day">
+                        <button class="day-btn">월요일</button>
+                        <button class="day-btn">화요일</button>
+                        <button class="day-btn">수요일</button>
+                        <button class="day-btn">목요일</button>
+                        <button class="day-btn">금요일</button>
+                        <button class="day-btn">토요일</button>
+                        <button class="day-btn">일요일</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="btn filter-button" onclick="toggleFilter('time')">공연 시간</button>
+                    <div class="filter-panel" id="filter-time">
+                        <button class="time-btn">14:00</button>
+                        <button class="time-btn">14:30</button>
+                        <button class="time-btn">15:00</button>
+                        <button class="time-btn">19:00</button>
+                        <button class="time-btn">19:30</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="btn filter-button" onclick="toggleFilter('cast')">캐스팅</button>
+                    <div class="filter-panel" id="filter-cast">
+
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="btn filter-toggle filter-button" id="resetFilters">필터 초기화</button>
+                </div>
+            </div>
+
+            <!-- 테이블 컨테이너 -->
+            <div class="table-container">
+                <table>
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>날짜</th>
+                    <th>시간</th>
+                    <th>알라딘</th>
+                    <th>지니</th>
+                    <th>자스민</th>
+                    <th>술탄</th>
+                    <th>자파</th>
+                    <th>밥칵</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleTable">
+                </tbody>
+                </table>
+            </div>
+            <div>
+                <p>
+                * 캐스팅 스케줄은 배우 및 제작사의 사정에 의해 사전 공지없이 변경될 수
+                있습니다.
+                </p>
+            </div>
+            <!-- 예매 버튼 -->
+            <div class="booking-container">
+                <span style="font-size: 14px">🎟️ 예매하기</span>
+                <a
+                href="https://tickets.interpark.com/goods/25005672"
+                target="_blank"
+                class="booking-btn interpark"
+                >인터파크</a
+                >
+                <a
+                href="http://ticket.yes24.com/Perf/53547"
+                target="_blank"
+                class="booking-btn yes24"
+                >예스24</a
+                >
+                <a
+                href="https://www.aladdinthemusical.co.kr/"
+                target="_blank"
+                class="booking-btn mom"
+                >뮤직오브더나잇</a
+                >
+            </div>
+
+            <a href="#top">
+                <button class="topbtn">▲ </button>
+            </a>
+
+            <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+            <script src="schedule.js"></script>
+
+
+        </main>
+        
+        <footer>
+            <p style="color: darkgray; font-size: 10px; padding-top:30px">cheongmin0@gmail.com</p>
+        </footer>
+    </body>
+</html>

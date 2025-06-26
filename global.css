@@ -1,0 +1,256 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: ivory;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.button-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  background: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background-color: lightgray;
+}
+
+
+/* 테이블 컨테이너 (항상 가운데 정렬) */
+.table-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background-color: white;
+  font-size: 14px;
+}
+
+th {
+  background-color: gray;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.redday {
+  /* color: rgb(238, 127, 127); */
+  color: rgb(255, 114, 114);
+}
+
+.blueday {
+  /* color: rgb(92, 199, 241); */
+  color: rgb(106, 106, 255);
+}
+
+.greenday {
+  color: rgb(120, 218, 120);
+}
+
+/* 선택된 행 스타일 */
+.selected {
+  background-color: lightgray !important;
+}
+
+.booking-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.booking-container h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.booking-btn {
+  display: inline-block;
+  padding: 3px 10px;
+  margin: 5px;
+  min-height: 10px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: gray;
+}
+
+.booking-btn:hover {
+  opacity: 0.8;
+}
+
+.special {
+  color: #e6b800;
+  font-size: 10px;
+  width: 20px;
+}
+
+.topbtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 3px solid lightgray;
+  font-size: 25px;
+  color: lightgray;
+  text-align: center;
+}
+
+.filter,
+.filter-bar {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.filter-group {
+  position: relative;
+}
+
+.filter-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 100;
+  white-space: flex-wrap;
+  min-width: 200px;
+  max-width: 400px;
+
+}
+
+.filter-panel button {
+  margin: 3px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.filter-panel input {
+  margin: 0 5px;
+}
+
+.day-btn.active,
+.time-btn.active,
+.cast-btn.active {
+  background-color: #333;
+  color: white;
+}
+
+.reset-btn {
+  background-color: #ddd;
+  color: #333;
+  margin: 0.5rem 0;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.reset-btn:hover {
+  background-color: #bbb;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 35px;
+  background-color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#musicalSelect {
+  padding: 8px 40px 8px 12px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none; 
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 스마트폰 화면 최적화 */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  .logo {
+    height: 80px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 12px;
+    margin: 2px;
+  }
+  table {
+    width: 100%;
+  }
+  th,
+  td {
+    font-size: 8px;
+    padding: 5px 2px;
+    min-width: 100px;
+    vertical-align: middle;
+  }
+  .special {
+    font-size: 8px;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .booking-btn {
+    font-size: 8px;
+    padding: 6px 9px;
+  }
+  
+  .filter,
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .vertical-divider {
+    display: none; /* 모바일에서는 세로 구분선 숨기기 */
+  }
+}
