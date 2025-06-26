@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentYear = 2025;
     let prevMonth = null;
 
-    Papa.parse(`/data/${fileName}`, {
+    Papa.parse(`/Schedule/data/${fileName}`, {
       download: true,
       header: true,
       complete: function (results) {
